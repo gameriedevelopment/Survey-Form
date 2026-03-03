@@ -1,0 +1,30 @@
+@import './tokens.css';
+@import './topbar.css';
+@import './survey.css';
+@import './form-controls.css';
+@import './thankyou.css';
+@import './animations.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Orbitron', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+#root {
+  min-height: 100vh;
+}

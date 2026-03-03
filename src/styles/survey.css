@@ -1,0 +1,207 @@
+/* ── Survey page wrapper ── */
+.survey {
+  min-height: 100vh;
+  background: var(--bg);
+  position: relative;
+}
+
+/* subtle grid texture */
+.survey::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(198, 163, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(198, 163, 255, 0.015) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Main content area ── */
+.survey__main {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 96px;
+}
+
+/* ── Header ── */
+.survey__header {
+  text-align: center;
+  margin-bottom: 56px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.survey__title {
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+
+.survey__title-accent {
+  color: var(--accent);
+}
+
+.survey__subtitle {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+
+.survey__consent {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--text-dim);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.survey__consent a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(198, 163, 255, 0.3);
+  transition: border-color 0.2s;
+}
+
+.survey__consent a:hover {
+  border-color: var(--accent);
+}
+
+/* ── Form section cards ── */
+.form-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  animation: fadeUp 0.5s ease both;
+}
+
+.form-section:hover {
+  border-color: var(--border-active);
+}
+
+.form-section--error {
+  border-color: var(--error);
+  box-shadow: 0 0 0 1px var(--error);
+}
+
+.form-section__number {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-section__number::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.form-section__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.form-section__sublabel {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-dim);
+  margin-bottom: 16px;
+}
+
+.required-dot {
+  color: var(--accent);
+  margin-left: 4px;
+}
+
+.field-error {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--error);
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── Submit area ── */
+.submit-area {
+  margin-top: 32px;
+  text-align: center;
+  animation: fadeUp 0.5s ease both;
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #1a1a1a;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 16px 56px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(198, 163, 255, 0.3);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.submit-btn--loading {
+  pointer-events: none;
+}
+
+.submit-btn__spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(26, 26, 26, 0.3);
+  border-top-color: #1a1a1a;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@media (max-width: 640px) {
+  .survey__main {
+    padding: 32px 16px 80px;
+  }
+
+  .form-section {
+    padding: 24px 18px;
+  }
+}

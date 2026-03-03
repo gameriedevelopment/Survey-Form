@@ -1,0 +1,27 @@
+:root {
+  /* ── surfaces ── */
+  --bg: #1a1a1a;
+  --surface: #282430;
+  --surface-hover: #322e3c;
+
+  /* ── accent ── */
+  --accent: #C6A3FF;
+  --accent-dim: rgba(198, 163, 255, 0.12);
+  --accent-glow: rgba(198, 163, 255, 0.06);
+
+  /* ── text ── */
+  --text: #e0dce6;
+  --text-muted: #9a95a3;
+  --text-dim: #6b6574;
+
+  /* ── borders ── */
+  --border: rgba(198, 163, 255, 0.1);
+  --border-active: rgba(198, 163, 255, 0.35);
+
+  /* ── feedback ── */
+  --error: #ff6b8a;
+
+  /* ── radii ── */
+  --radius: 10px;
+  --radius-sm: 6px;
+}
