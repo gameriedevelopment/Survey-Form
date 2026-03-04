@@ -242,14 +242,94 @@
   letter-spacing: 0.08em;
 }
 
-@media (max-width: 640px) {
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
   .scale-item {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     font-size: 12px;
   }
 
   .scale-row {
+    gap: 5px;
+  }
+
+  .scale5-item {
+    height: 48px;
+    font-size: 13px;
+  }
+
+  .option {
+    padding: 16px;
+  }
+
+  .option__indicator {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Mobile (up to 640px) */
+@media (max-width: 640px) {
+  .scale-item {
+    width: 42px;
+    height: 42px;
+    font-size: 11px;
+  }
+
+  .scale-row {
     gap: 4px;
+    justify-content: center;
+  }
+
+  .scale5-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .scale5-item {
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+  }
+
+  .option {
+    padding: 14px;
+  }
+
+  .option__indicator {
+    width: 20px;
+    height: 20px;
+  }
+
+  .option__label {
+    font-size: 13px;
+  }
+
+  .option__desc {
+    font-size: 11px;
+  }
+
+  .input,
+  .textarea {
+    font-size: 14px;
+    padding: 16px;
+  }
+
+  .textarea {
+    min-height: 120px;
+  }
+}
+
+/* Very small mobile (up to 375px) */
+@media (max-width: 375px) {
+  .scale-item {
+    width: 36px;
+    height: 36px;
+    font-size: 10px;
+  }
+
+  .scale-row {
+    gap: 3px;
   }
 }

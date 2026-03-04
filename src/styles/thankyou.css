@@ -94,3 +94,67 @@
   width: 14px;
   height: 14px;
 }
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .thankyou__content {
+    padding: 28px;
+  }
+
+  .thankyou__heading {
+    font-size: clamp(26px, 5vw, 38px);
+  }
+
+  .thankyou__sub {
+    font-size: 13px;
+  }
+
+  .thankyou__body {
+    font-size: 13px;
+  }
+}
+
+/* Mobile (up to 640px) */
+@media (max-width: 640px) {
+  .thankyou__content {
+    padding: 24px 20px;
+  }
+
+  .thankyou__badge {
+    font-size: 9px;
+    padding: 5px 14px;
+    margin-bottom: 24px;
+  }
+
+  .thankyou__heading {
+    font-size: clamp(24px, 6vw, 32px);
+    margin-bottom: 14px;
+  }
+
+  .thankyou__sub {
+    font-size: 13px;
+  }
+
+  .thankyou__body {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .thankyou__cta {
+    width: 100%;
+    padding: 18px 32px;
+    font-size: 11px;
+  }
+}
+
+/* Very small mobile (up to 375px) */
+@media (max-width: 375px) {
+  .thankyou__content {
+    padding: 20px 16px;
+  }
+
+  .thankyou__heading {
+    font-size: 22px;
+  }
+}

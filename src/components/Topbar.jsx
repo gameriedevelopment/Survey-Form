@@ -2,7 +2,11 @@ export default function Topbar({ progress }) {
   return (
     <header className="topbar">
       <div className="topbar__logo">
-        <div className="topbar__logo-icon">G</div>
+        <img 
+          src="/gamerie-logo.png" 
+          alt="Gamerie" 
+          className="topbar__logo-icon topbar__logo-img"
+        />
         Gamerie
       </div>
       <div className="topbar__progress-label">{progress}% Complete</div>

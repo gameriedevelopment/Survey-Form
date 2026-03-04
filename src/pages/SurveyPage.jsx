@@ -81,7 +81,7 @@ export default function SurveyPage({ onSubmitSuccess }) {
     }
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const validationErrors = validateForm(email, answers)
     setErrors(validationErrors)
 
@@ -94,11 +94,43 @@ export default function SurveyPage({ onSubmitSuccess }) {
 
     setSubmitting(true)
 
-    // TODO: Replace with actual API call
-    setTimeout(() => {
-      setSubmitting(false)
+    try {
+      const payload = {
+        email,
+        role: answers.role,
+        primaryGenre: answers.genre,
+        scoutImpressionScore: answers.scout_score,
+        biggestBarriers: answers.barriers,
+        desiredIncomeStream: answers.income_stream,
+        primaryCommunityPlatform: answers.platform,
+        preferredGamerieFeature: answers.feature,
+        currentMonthlySubscriptionsRange: answers.current_bill,
+        priceSweetSpot: answers.price_sweet,
+        gamingNetworkValueScore: answers.network_value,
+        industryShareResponse: answers.final_thought || '',
+      }
+
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+      const response = await fetch(`${apiUrl}/users/submit-survey`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+        throw new Error(errorData.message || 'Failed to submit survey')
+      }
+
       onSubmitSuccess()
-    }, 1800)
+    } catch (error) {
+      console.error('Survey submission error:', error)
+      setErrors({ submit: error.message || 'Failed to submit survey. Please try again.' })
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -128,6 +160,18 @@ export default function SurveyPage({ onSubmitSuccess }) {
         ))}
 
         <SubmitButton loading={submitting} onClick={handleSubmit} />
+
+        {errors.submit && (
+          <div className="submit-area" style={{ marginTop: '16px' }}>
+            <div className="field-error" style={{ justifyContent: 'center' }}>
+              <svg width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+              </svg>
+              {errors.submit}
+            </div>
+          </div>
+        )}
       </main>
     </div>
   )

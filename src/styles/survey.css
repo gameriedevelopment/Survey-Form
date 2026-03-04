@@ -196,12 +196,71 @@
   animation: spin 0.6s linear infinite;
 }
 
-@media (max-width: 640px) {
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
   .survey__main {
-    padding: 32px 16px 80px;
+    padding: 40px 20px 80px;
   }
 
   .form-section {
-    padding: 24px 18px;
+    padding: 28px 24px;
+  }
+
+  .survey__title {
+    font-size: clamp(24px, 4vw, 28px);
+  }
+
+  .submit-btn {
+    padding: 16px 48px;
+    font-size: 12px;
+  }
+}
+
+/* Mobile (up to 640px) */
+@media (max-width: 640px) {
+  .survey__main {
+    padding: 24px 16px 80px;
+  }
+
+  .form-section {
+    padding: 20px 16px;
+  }
+
+  .form-section__number {
+    font-size: 9px;
+  }
+
+  .form-section__label {
+    font-size: 14px;
+  }
+
+  .form-section__sublabel {
+    font-size: 12px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 18px 32px;
+    font-size: 12px;
+  }
+
+  .survey__subtitle {
+    font-size: 14px;
+  }
+
+  .survey__consent {
+    font-size: 11px;
+  }
+}
+
+/* Very small mobile (up to 375px) */
+@media (max-width: 375px) {
+  .survey__main {
+    padding: 20px 12px 70px;
+  }
+
+  .form-section {
+    padding: 18px 14px;
+    margin-bottom: 16px;
   }
 }

@@ -1,4 +1,6 @@
 export default function ThankYouPage() {
+  const registerUrl = import.meta.env.VITE_REGISTER_URL || 'https://mvp.gamerie.gg/register'
+
   return (
     <div className="thankyou">
       <div className="thankyou__content">
@@ -15,7 +17,7 @@ export default function ThankYouPage() {
           officially part of it.
         </p>
 
-        <a href="#" className="thankyou__cta">
+        <a href={registerUrl} className="thankyou__cta" target="_blank" rel="noopener noreferrer">
           Create Your Gamerie Account
           <svg
             viewBox="0 0 16 16"
