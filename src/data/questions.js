@@ -3,7 +3,7 @@ export const QUESTIONS = [
     id: 'role',
     type: 'radio',
     label: "What's your role in the esports/gaming scene?",
-    required: true,
+    required: false,
     options: [
       { value: 'pro', label: 'The Pro Player', desc: 'My focus is on elite competition and getting scouted.' },
       { value: 'aspiring', label: 'The Aspiring Pro', desc: "I'm on the grind, climbing the ranks to go pro." },
@@ -17,7 +17,7 @@ export const QUESTIONS = [
     id: 'genre',
     type: 'radio',
     label: "What's your primary game genre?",
-    required: true,
+    required: false,
     options: [
       { value: 'tactical_fps', label: 'Tactical FPS' },
       { value: 'moba', label: 'MOBA' },
@@ -32,14 +32,14 @@ export const QUESTIONS = [
     id: 'scout_score',
     type: 'scale10',
     label: 'A scout from a Tier-1 organization has 30 seconds to look you up online. On a scale of 1–10, how likely are they to be impressed?',
-    required: true,
+    required: false,
   },
   {
     id: 'barriers',
     type: 'checkbox',
     label: "What's the biggest barrier holding you back right now?",
     sublabel: 'Check all that apply',
-    required: true,
+    required: false,
     options: [
       { value: 'noticed', label: 'Proving my skills and getting noticed by legitimate scouts.' },
       { value: 'recruiting', label: 'Finding and recruiting verified, serious talent.' },
@@ -53,7 +53,7 @@ export const QUESTIONS = [
     id: 'income_stream',
     type: 'radio',
     label: 'If you could add one income stream tomorrow, which would it be?',
-    required: true,
+    required: false,
     options: [
       { value: 'sponsorships', label: 'Brand sponsorships and partnerships.' },
       { value: 'tournaments', label: 'Tournament winnings.' },
@@ -66,7 +66,7 @@ export const QUESTIONS = [
     id: 'platform',
     type: 'radio',
     label: 'Where do you spend most of your time connecting with the gaming community?',
-    required: true,
+    required: false,
     options: [
       { value: 'discord', label: 'Discord' },
       { value: 'tiktok', label: 'TikTok / Instagram' },
@@ -81,7 +81,7 @@ export const QUESTIONS = [
     id: 'feature',
     type: 'radio',
     label: 'You can activate ONE Gamerie feature right now. Which do you choose?',
-    required: true,
+    required: false,
     options: [
       { value: 'ai_profile', label: 'AI Profile', desc: 'An instant, professional gaming resume that gets me noticed.' },
       { value: 'matchmaking', label: 'Intelligent Matchmaking', desc: 'A perfect, non-toxic squad for every single session.' },
@@ -94,7 +94,7 @@ export const QUESTIONS = [
     id: 'current_bill',
     type: 'radio',
     label: 'What does your total monthly subscription bill look like (gaming, entertainment, etc)?',
-    required: true,
+    required: false,
     options: [
       { value: 'under10', label: '<$10 USD' },
       { value: '11_15', label: '$11–$15 USD' },
@@ -108,7 +108,7 @@ export const QUESTIONS = [
     id: 'price_sweet',
     type: 'radio',
     label: "Thinking about your own budget, what monthly price would make you say, 'this is a complete no-brainer for my career'?",
-    required: true,
+    required: false,
     options: [
       { value: 'free', label: 'Free-tier', desc: "I'd only use a free version with basic features." },
       { value: '5_10', label: '$5–$10 USD', desc: 'A small, monthly price for a clear advantage.' },
@@ -120,7 +120,7 @@ export const QUESTIONS = [
     id: 'network_value',
     type: 'scale5',
     label: 'How valuable would a 100% gaming-focused professional network be to you, free from the noise and drama of mainstream social media?',
-    required: true,
+    required: false,
   },
   {
     id: 'final_thought',
